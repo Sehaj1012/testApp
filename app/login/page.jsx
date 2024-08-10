@@ -1,7 +1,7 @@
 "use client"
 import { useState } from 'react'
 import React from 'react'
-
+import { findUser } from "@/data/findUser"
 const Login = () => {
     const [ UserName, setUserName] = useState();
     const [password, setPassword] = useState();
@@ -14,9 +14,9 @@ const Login = () => {
         setPassword(e.target.value);
     }
 
-    const onSubmit = (e) => {
+    const onSubmit = async (e) => {
         e.preventDefault();
-        console.log("Submitting", password, UserName);
+        await findUser({UserName, password});
     }
 
   return (

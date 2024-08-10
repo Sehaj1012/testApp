@@ -1,5 +1,6 @@
 "use client"
 import { useState } from 'react'
+import { addUser } from '../../data/adduser'
 import React from 'react'
 
 const Register = () => {
@@ -14,9 +15,9 @@ const Register = () => {
         setPassword(e.target.value);
     }
 
-    const onSubmit = (e) => {
+    const onSubmit = async (e) => {
         e.preventDefault();
-        console.log("Submitting", password, UserName);
+        await addUser({UserName, password});
     }
 
   return (
@@ -28,4 +29,4 @@ const Register = () => {
   )
 }
 
-export default Register
+export default Register;
