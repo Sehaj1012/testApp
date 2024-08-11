@@ -10,7 +10,6 @@ export default function Home() {
       <Link href={"/register"} className="cursor:pointer">
         Register
       </Link>
-      <button >test</button>
     </main>
   );
 }
